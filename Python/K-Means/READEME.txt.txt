@@ -1,0 +1,78 @@
+Author: Josh Pickel
+Date: 9/29/19
+Assignment: Programming Assignment 2
+# Course: CPTS 215, Fall 2019
+# Description: This program is a k-means algorithm designed to cluster breast
+# cancer patients based on their genome sequences. The program will prompt
+# the user for a file path and number of clusters, and perform the k-means 
+# algorithm on the provided data in the file. It will then plot the results
+# as a heatmap to visualize any differences between the clusters.
+
+Classes/Methods:
+
+K_Means:
+
+class K_means:
+    '''A class used to create a k means object, with methods to run the k-means
+        algorithm.
+        def __init__(self,k): k-means constructor that produces k clusters
+        def random_data(self,dataSet): method that creates random clusters
+        def calculate_centroid(self): method to produce centroid for each cluster
+        def distances(self,cluster): calculates each smaples distance from eahc cluster
+        def shift(self): reassigns cluster members to closest cluster by centroid distance
+        def get_members(self): gathers each clusters members
+        '''
+ def __init__(self,k, dataSet):
+        ''' connstructor that creates k number of clusters
+        Parameter k: number of clusters to produce'''
+
+def random_data(self):
+        '''Method that assigns each sample to a random cluster '''
+
+def calculate_centroid(self):
+        '''This function calculates the centroid for each cluster
+        Returns: centroid list'''
+
+def distances(self,cluster):
+        ''' This function calculates each samples distance from the given cluster
+        Parameter cluster: The cluster to calculate the distance from '''
+
+def shift(self):
+        '''This function will calculate the distance of each sample to each cluster's
+        centroid,and move the sample into the cluster in which it is closest to'''
+
+def get_members(self):
+        '''This function appends gets each clusters members
+        Returns: array of members for each cluster'''
+
+def plot(self):
+        '''This method will plot the end K-means data after shfting is complete
+        in the for of a heatmap.'''
+
+def insight(self):
+        '''This function determines how many nonrecurring and recurring samples
+        are in each cluster after re assignment convergence
+        Returns: a touple for each cluster, representing number of non recurring
+        samples for index 0, and recurring in index 1'''
+
+
+Clusters:
+
+class clusters(K_means):
+    ''' A class that cretes clusters to be stored in K-means members cluster array
+    This class is a child of the K-means class
+    def __init__(self): creats an empty member array, and gives each cluster a centroid attribute
+    def append_data__(self,sample): method to append data to the member array
+    def remove_data(self,sample): method to remove data from the member array'''
+
+def __init__(self):
+        ''' Constructor for the clusters class'''
+
+def append_data(self,sample):
+        '''This method allows one to append data to the member array
+        Parameter sample: the data to append to member array'''
+
+def remove_data(self,index):
+        '''This method allows one to remove data from the member array 
+        Parameter index: the index in which to remove from the member array'''
+
