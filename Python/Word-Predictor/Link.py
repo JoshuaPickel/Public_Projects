@@ -13,9 +13,6 @@ import random
 import timeit
 import sys
 import time
-#import pandas as pd
-#import numpy as np
-#import matplotlib.pyplot as plt
 iMaxStackSize = 999999999
 sys.setrecursionlimit(iMaxStackSize)
 
@@ -43,6 +40,7 @@ class Node:
         return self.key
     
     def get_value(self):
+        '''This method returns the value for the node '''
         return self.value
 
    
@@ -85,7 +83,7 @@ class Node:
 class DoublyLinkedList:
     '''This clas is a class for LinkedList, houses necessary data and methods
     for the linked list.'''
-    def __init__ (self):
+    def __init__ (self):  # Constructor for doubly linked class
         self.head = None
         self.tail = None
         self.size = 0
@@ -119,8 +117,6 @@ class DoublyLinkedList:
         else:
             item.set_next(self.head)  # if not empty, add node and change pointers
             item.set_prev(None)
-            #self.head.set_prev(temp)
-            #self.tail.set_next(temp)
             self.head = item
             self.size += 1
         return
@@ -211,7 +207,7 @@ class DoublyLinkedList:
     def search(self, item):
         '''This method searches for an item in the CircularDoublyLinkedList, and
         returns the index.
-        Parameter item: item to sesrch for
+        Parameter item: item to search for
         Returns: index position of item, -1 if not in list'''
         curr = self.head                                # Start ar head
         loc = 0
@@ -223,6 +219,10 @@ class DoublyLinkedList:
         return loc
     
     def remove(self,item):
+        '''This method removes an item from the doubly linked list and reassigns
+        pointers as necessary.
+        Parameter item: the item to remove
+        '''
         loc = self.search(item)
         curr = self.head
         if loc == -1:
@@ -237,10 +237,10 @@ class DoublyLinkedList:
             curr.previous.set_next(curr.next)     # Reassign curr's previous next pointer
             if curr.next != None:
                 curr.next.set_prev(curr.previous)
-            #curr.previous.set_next(curr.next)     # Reassign curr's previous next pointer
             self.size -= 1
     
     def List_size(self):
+        '''This method returns the size of the doubly linked list. '''
         return self.size
     
     
@@ -258,6 +258,9 @@ class DoublyLinkedList:
                     
                 
     def min_value(self,temp_head):
+        '''This method returns the minimum value stored in the doubly linked list.
+        Parameter temp_head: the starting node
+        Returns min_val: the minimum value stored'''
         min_val = temp_head.data
         curr = temp_head.get_next()
         self.loop_assign += 1
@@ -289,6 +292,7 @@ class DoublyLinkedList:
         return Flag
     
     def delete_copy(self):
+        '''This method deletes a copy. '''
         self.head = None
         self.tail = None
         
@@ -321,7 +325,6 @@ class OrderedDoublyLinkedList(DoublyLinkedList):
         if self.is_Empty():           # If the Linked List is empty, add first node
             self.add_item(item)
             return
-        #print(my)
         current = self.head
         previous = None
                 
